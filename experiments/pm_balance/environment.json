@@ -1,0 +1,38 @@
+{
+  "date_utc": "2026-11-06",
+  "status": "blocked_before_inference",
+  "upstream": "https://github.com/EvolvingLMMs-Lab/SimpleStream",
+  "commit": "be227ee8ce90a258b286a34161688c2a59eeeadb",
+  "git_status": "",
+  "archive_sha256": "5616037d6555e106f57500d29db9977c2596296f0eb73c8311aa77707ec00f13",
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.8.0a0+5228986c39.nv25.6",
+    "torchvision": "0.22.0a0+95f10a4e",
+    "transformers": null,
+    "accelerate": null,
+    "av": null,
+    "Pillow": "11.2.1",
+    "numpy": "1.26.4",
+    "tqdm": "4.67.1",
+    "qwen-vl-utils": null,
+    "flash-attn": "2.7.4.post1"
+  },
+  "required_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "windows": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "fps": 1.0,
+  "chunk_duration": 1.0,
+  "max_qa_tokens": 256,
+  "blockers": [
+    "NVIDIA driver unavailable: nvidia-smi failed; torch.cuda.is_available() false in H-WM environment",
+    "Required inference dependencies missing in inspected Python environments",
+    "Required 8B model and OVO annotation/videos not found in inspected local caches/directories",
+    "Annotation download failed: DNS resolution unavailable in shell"
+  ],
+  "results_generated": false
+}
