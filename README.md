@@ -19,6 +19,8 @@
 
 ## 当前状态
 
-尚未运行推理。Baseline 复现和 PM-balance 评估目前受 CUDA、依赖及本地模型/数据
-可用性阻塞，详见 [`baseline_repro.md`](experiments/pm_balance/baseline_repro.md)
+2026-11-07：GPU 已恢复访问，已找到本地 Qwen3-VL-8B-Instruct，建立独立推理环境并
+准备官方单题视频，已跑通 recent-4（4 帧，预测与标注一致）；完整 baseline 和四窗口评估尚未完成。
+见 [`runtime_setup.md`](experiments/pm_balance/runtime_setup.md)、
+[`baseline_repro.md`](experiments/pm_balance/baseline_repro.md)
 和 [`pm_validation.md`](experiments/pm_balance/pm_validation.md)。

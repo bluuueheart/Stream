@@ -1,0 +1,44 @@
+{
+  "date_utc": "2026-11-07",
+  "status": "official_recent4_single_question_passed",
+  "python": "3.11.18",
+  "executable": "/root/Stream/.venv-qwen3/bin/python",
+  "gpu": "NVIDIA H20",
+  "cuda_available": true,
+  "torch_cuda": "12.4",
+  "gpu_uuid": "GPU-bb163038-9f05-12e3-dc3c-ead2ac87a033",
+  "logical_device": "cuda:0",
+  "model_path": "/taijifs_hzlf/share_1227201/weipuzhang/Qwen3-VL-8B-Instruct",
+  "model_revision": "unknown; local shared weights, no HF revision metadata found",
+  "model_metadata_sha256": {
+    "config.json": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+    "model.safetensors.index.json": "520b2e05079402e9468a8701d03d1154d14b2599593afb6effa7fb60c1bff070",
+    "preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+  },
+  "packages": {
+    "torch": "2.5.1+cu124",
+    "torchvision": "0.20.1+cu124",
+    "transformers": "4.57.6",
+    "accelerate": "1.12.0",
+    "flash-attn": "2.7.4.post1",
+    "av": "18.1.0",
+    "qwen-vl-utils": "0.0.14",
+    "numpy": "2.4.6",
+    "Pillow": "13.0.0"
+  },
+  "annotation_commit": "c34093f9a072d93f9e1c6b923446dfba71f4528e",
+  "annotation_sha256": "dc4a90daf26764dc8ab8b228ea4af864ba2ea50c2833ead8c9af6573f78ccf97",
+  "clip_35_sha256": "3b4d65372c7229a8a3e911d3e61dc814f7c4545a1d270500973bcdc6fd53a724",
+  "full_dataset_available": false,
+  "results_generated": true,
+  "runtime_checks": {
+    "flash_attention_bf16": true,
+    "qwen_vocabulary_projection_bf16": true,
+    "dependency_check": true,
+    "clip_last_frame_timestamp": 81.96666666666667
+  },
+  "benchmark_completed": false,
+  "smoke_result": "recent4_smoke_20261107.json",
+  "smoke_result_sha256": "c4748668c0f572d329e0bbabb088a669c20fca17e4ad1f8239896ec540f46b0a"
+}

@@ -1,6 +1,7 @@
 # SimpleStream baseline 复现记录
 
-检查日期：2026-11-06 UTC。状态：**尚未运行推理，复现未完成**。
+原始检查日期：2026-11-06 UTC。2026-11-07 已恢复 GPU 并通过官方 recent-4 单题验证，完整复现未完成。
+最新环境与运行进度见 [`runtime_setup.md`](runtime_setup.md)。下方环境阻塞描述为历史记录。
 
 ## 冻结版本
 
@@ -12,7 +13,7 @@
 - 官方依赖：`requirements-qwen3.txt` 指定 transformers 4.57.6、accelerate 1.12.0；公共依赖包含 qwen-vl-utils 0.0.14、av >=14.4.0。PyTorch/torchvision 和 flash-attn 需要单独安装并记录实际版本。
 - 当前默认 Python 的实测包版本见 `environment.json`；该环境不满足推理条件。
 
-## 当前阻塞
+## 2026-11-06 阻塞记录（历史）
 
 `nvidia-smi` 无法连接驱动；现有 H-WM 环境的 `torch.cuda.is_available()` 也是 False。默认 Python 缺 transformers、accelerate、av、qwen_vl_utils。检查的项目目录、用户 HF 缓存、local_share 与公共模型目录中未找到指定 8B 模型及 OVO 数据；这不代表全盘不存在。通过 Python 下载官方标注失败，错误为 DNS resolution unavailable。未安装包、未下载大模型或视频、未启动推理。
 
@@ -21,14 +22,14 @@
 在满足依赖和 CUDA 的环境中，从 Stream 根目录执行；只允许使用本机约定的 GPU 2,3,4,5，先检查占用，不结束他人的进程。单 GPU 示例：
 
 ```bash
-CUDA_VISIBLE_DEVICES=2 python SimpleStream/main_experiments/eval_qwen3vl_ovo.py \
+CUDA_VISIBLE_DEVICES=GPU-bb163038-9f05-12e3-dc3c-ead2ac87a033 .venv-qwen3/bin/python SimpleStream/main_experiments/eval_qwen3vl_ovo.py \
   --model_path Qwen/Qwen3-VL-8B-Instruct \
   --anno_path /absolute/path/ovo_bench_new.json \
   --chunked_dir /absolute/path/chunked_videos \
   --result_dir experiments/pm_balance/results/official_recent4 \
   --recent_frames_only 4 --chunk_duration 1.0 --fps 1.0 --max_qa_tokens 256
 
-python SimpleStream/scoring/score_ovo_bench.py \
+.venv-qwen3/bin/python SimpleStream/scoring/score_ovo_bench.py \
   --result_path experiments/pm_balance/results/official_recent4/qwen3vl_results_TIMESTAMP.json
 ```
 

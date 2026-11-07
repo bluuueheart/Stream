@@ -2,7 +2,7 @@
 
 **目标**：在不改 backbone、不引入复杂 memory 的前提下，验证学习型窗口选择能否在独立测试数据上超过 SimpleStream 的**最佳固定窗口**。
 
-**当前下一步**：确认 GPU 可用，准备指定模型、OVO 标注与 query-prefix 视频切片，配齐依赖后先跑通官方 recent-4；再扫描其他窗口，暂不训练选择器。
+**当前下一步**：GPU、指定模型、依赖和官方 recent-4 单题验证已通过；准备完整 OVO query-prefix 视频集，审计覆盖和因果性后运行完整 recent-4，再扫描其他窗口，暂不训练选择器。见 `experiments/pm_balance/runtime_setup.md`。
 
 ## 1. 冻结 baseline
 

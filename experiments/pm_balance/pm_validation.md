@@ -1,6 +1,14 @@
 # PM-Balance validation
 
-状态：**Blocked / 尚不能判断 Go 或 No-Go**。尚无模型推理记录，不能用环境阻塞推断 idea 无效。
+状态：**完整评估待执行 / 尚不能判断 Go 或 No-Go**。已通过真实单题推理验证，但尚无四窗口实验数据。
+
+2026-11-07 更新：GPU、模型权重和独立环境已准备，已通过单题 recent-4 运行验证（见 `recent4_smoke_20261107.json`），
+详见 `runtime_setup.md`。四窗口实验仍无可用结果，以下分析计划保持待执行。
+已在获得任何成功预测前冻结 `video_splits_v1.json`：按标注中的 source video 路径
+确定划分，train/dev/test 为 405/122/117 个视频、1049/316/275 条标注。
+划分算法不读取 GT、task 或预测；完整标注中的 644 个视频无重复 basename，
+但不同文件是否内容重复仍待审计。此为官方标注上的 internal study。
+dev ACR 仅 3 题，后续宏平均方差可能较大；不根据后续成绩重新划分。
 
 本次已归档未修改的 baseline，记录依赖与命令，核对论文和评分代码的口径。`window_sweep.csv` 仅有表头，**不是完成的实验数据**。
 
